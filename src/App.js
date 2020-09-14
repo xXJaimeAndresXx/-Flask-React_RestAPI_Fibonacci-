@@ -5,7 +5,7 @@ export const App = () => {
   const [state, setState] = useState({ loading: true, data: null, error: null })
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:5000/fibonacci?number=${value}`)
+    fetch(`http://3.16.45.124:5000/fibonacci?number=${value}`)
     .then((response) => response.json()).then((data) => {
       if (data) {
         setState({ ...state, loading: false, data: data })

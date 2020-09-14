@@ -1,7 +1,9 @@
 from flask import Flask, request
+from flask_cors import CORS
 import json
 
 app = Flask(__name__)
+cors = CORS(app)
 
 @app.route('/fibonacci', methods=['GET','POST'])
 def fibonacci():
@@ -17,4 +19,4 @@ def fibonacci():
     return (json_serie)
 
 if __name__ == '__main__':
-    app.run( debug=True,port= 5000)
+    app.run(host="0.0.0.0", debug=True,port= 5000)
